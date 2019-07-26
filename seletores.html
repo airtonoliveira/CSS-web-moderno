@@ -76,6 +76,33 @@
             color:rgb(250, 101, 2);
         }
 
+        /*
+            Busca o segundo elemento span que sejam filho direto
+            de section.
+        */
+        section > span:nth-of-type(2){
+            background-color: rgb(105, 98, 109);
+        }
+
+
+
+        /*
+            Vírgula indica que os mesmo atributos devem ser 
+            aplicados para as diferentes tags, ex:
+            div span:nth-child(even), p, ul{
+                font-weight: bold;
+                color:rgb(250, 101, 2);
+            }
+
+            Espaço indica que os mesmo atributos devem ser 
+            aplicados para os diferentes seletores
+            que sejam descendentes, ex:
+            div span:nth-child(even) p ul{
+                font-weight: bold;
+                color:rgb(250, 101, 2);
+            }
+        */
+
     </style>
 </head>
 
