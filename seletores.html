@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        
+        body {
+           font-size:16px;
+        }
+        
+        [feira=casa]{
+           font-style: italic;
+        }
+
+        /*
+        [feira*=sa] 
+            - Busca elementos que possuam "feira" e seu valor contenha "sa"
+        [feira~=escritorio] 
+            - Busca elementos que possuam "feira" e que possuam entre seus valores o valor "escritorio"
+        */
+        [feira=escritorio]{
+            background-color: #f77;
+        }
+
+        /* 
+            Busca o elemento com id "aninhado" 
+            que pussua um elemento filho direto que seja uma "div"
+            Termo em inglês: Child
+        */
+        #aninhado > div {
+            color:rgb(17, 0, 255);
+            background-color: rgb(188, 192, 255);
+        }
+
+        #aninhado section {
+            background-color: rgb(203, 255, 218);
+        }
+
+        /* 
+            Busca o elemento "ul" que possua um elemento "p"
+            necessariamente ao lado (adjacente) onde ambos estejam 
+            dentro de um mesmo elemento pai.
+            Termo em inglês: Adjacent Sibling
+        */
+        p + ul {
+            background-color: rgb(198, 245, 70);
+        }
+
+        /* 
+            Busca o elemento "ul" que possua um elemento "p"
+            dentro de um mesmo elemento pai.
+            Termo em inglês: General Sibling
+        */
+        p ~ ul {
+            font-weight: bold;
+            color:blue;
+        }
+
+        /*
+            Busca o 3º elemento filho do tipo span.
+            Vale lembrar que a classe "tag" deste arquivo gera um span
+        */
+        span:nth-child(3){
+            font-weight: bold;
+            color:rgb(255, 59, 222);
+        }
+        /*
+            Busca os elementos filhos do tipo span que sejam ímpares na sequência.
+            odd = ímpares, even = pares.
+        */
+       div span:nth-child(even){
+            font-weight: bold;
+            color:rgb(250, 101, 2);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <span >PRIMEIRO FILHO</span>
+                <span >SEGUNDO FILHO</span>
+                <span >TERCEIRO FILHO</span>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
