@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+        pre, code {
+  font-family: monospace, monospace;
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
+}
+        body{
+            background-color: rgb(127, 193, 255);
+        }
+
+    </style>
+   Se remover o "stylesheet" a cor será definida pelo estilo definido para tag "body" ao invés do arquivo de estilos.
+   <br></br>
+   Ordem de prioridade:
+   <ol>
+       <li>Inline css: &ltbody style="background-color: beige"&gt&lt/body&gt</span></li>
+       <li>CSS Interno vs Externo: depende da ordem em que é executado na página.</body></li>
+    </ol>
+  
+   <link rel="stylesheet" href="css/externo.css">
+</head>
+
+<body style="background-color: beige">
+    <h1>E agora?</h1>
+</body>
+
+</html>
